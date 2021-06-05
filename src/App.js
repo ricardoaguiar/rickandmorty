@@ -19,7 +19,7 @@ const App = () => {
   return (
     <div className="App">
       <header>
-        <h1>Ricky and Morty</h1>
+        <h1>Ricky and Morty React App</h1>
       </header>
       <div className="container">
         <ul>
