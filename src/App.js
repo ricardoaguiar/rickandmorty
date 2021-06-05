@@ -1,21 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+
+import { useRickAndMortyCharacters } from './Api.hooks';
 
 const App = () => {
-  const [characters, setCharacters] = useState([]);
-
-  useEffect(() => {
-    fetch('https://rickandmortyapi.com/api/character')
-      .then((res) => res.json())
-      .then((data) => {
-        setCharacters(
-          data.results.map((result) => ({
-            name: result.name,
-            image: result.image,
-          }))
-        );
-      });
-  }, []);
-
+  //deconstruct state from custom hook
+  const { characters } = useRickAndMortyCharacters();
   return (
     <div className="App">
       <header>
