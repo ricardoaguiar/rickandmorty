@@ -55,3 +55,9 @@ img {
   width: 100%;
   height: auto;
 }
+
+.characterSelector {
+  display: block;
+  width: 100%;
+  text-align: center;
+}

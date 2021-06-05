@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useRickAndMortyCharacters } from './Api.hooks';
+import Dropdown from './Dropdown';
 
 const App = () => {
   //deconstruct state from custom hook
@@ -11,6 +12,7 @@ const App = () => {
         <h1>Ricky and Morty React App</h1>
       </header>
       <div className="container">
+        <Dropdown />
         <ul>
           {characters.map((character) => (
             <li key={character.name}>
