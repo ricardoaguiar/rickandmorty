@@ -18,10 +18,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.app {
-  display: flex;
-  flex-direction: column;
-}
+
 header {
   display: inline-flex;
   width: 100%;
@@ -61,43 +58,21 @@ figcaption {
   justify-content: space-between;
 }
 .characterCard {
-  border: 1px solid green;
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 6px;
   margin: 0.2rem;
   width: 100%;
 }
-
 img {
   object-fit: cover;
   width: 100%;
   height: auto;
 }
-
 .sidebar {
   min-width: 220px;
 }
 .sidebar a {
   color: #111;
-}
-
-.characterProfile {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
-.characterProfile span {
-  border: 1px solid grey;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.characterProfile span img {
-  object-fit: cover;
-  width: 100%;
-  height: auto;
-}
-.characterDetails {
-  flex-direction: column;
 }
 .home,
 .menu {
@@ -142,10 +117,9 @@ img {
 ::-webkit-scrollbar {
   display: none;
 }
-.menuIndicator {
-  position: right;
-  right: 0;
-}
 .character {
-  outline: 1px solid red;
+  border-left: 0.5px solid #111;
+  border-bottom: 1px solid #111;
+  padding-left: 0.4rem;
+  width: 15rem;
 }

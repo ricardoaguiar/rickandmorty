@@ -6,11 +6,10 @@ import Character from '../components/Character';
 const CharacterProfile = (props) => {
   const { characters } = useRickAndMortyCharacters();
   // const { id } = useParams();
-
   // const findCharacter = characters.find((character => character.id === id) => { console.log(findCharacter)});
 
   return (
-    <div className="character">
+    <div>
       {characters.map((character) => {
         return (
           <Character
