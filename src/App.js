@@ -1,28 +1,23 @@
 import React from 'react';
-
-import { useRickAndMortyCharacters } from './Api.hooks';
-import Dropdown from './Dropdown';
+import Sidebar from './components/Sidebar';
+import Character from './components/Character';
+import { Home } from './pages/Home';
+import { Router, Link } from '@reach/router';
 
 const App = () => {
-  //deconstruct state from custom hook
-  const { characters } = useRickAndMortyCharacters();
   return (
-    <div className="App">
+    <div>
       <header>
-        <h1>Ricky and Morty React App</h1>
+        <Link to="/">
+          <h1>Ricky and Morty App</h1>
+        </Link>
       </header>
       <div className="container">
-        <Dropdown />
-        <ul>
-          {characters.map((character) => (
-            <li key={character.name}>
-              <figure className="characterCard">
-                <img src={character.image} alt={character.image} />
-                <figcaption>{character.name}</figcaption>
-              </figure>
-            </li>
-          ))}
-        </ul>
+        <Sidebar />
+        <Home path="/" />
+        <Router>
+          <Character path="/character/:id" />
+        </Router>
       </div>
     </div>
   );

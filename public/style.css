@@ -4,6 +4,12 @@
   padding: 0;
 }
 
+a,
+a:hover {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.95);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -18,6 +24,7 @@ body {
 }
 header {
   display: inline-flex;
+  width: 100%;
   height: 5rem;
   justify-content: center;
   align-items: center;
@@ -67,19 +74,10 @@ img {
 }
 
 .sidebar {
-  flex: 1 0 220px;
+  min-width: 220px;
 }
-
-.dropdown {
-  border: 1px solid grey;
-  border-radius: 5px;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  height: min-content;
-}
-
-.dropdown-close {
-  max-height: 0;
+.sidebar a {
+  color: #111;
 }
 
 .characterProfile {
@@ -101,7 +99,7 @@ img {
 .characterDetails {
   flex-direction: column;
 }
-
+.home,
 .menu {
   background-color: #eee;
   color: rgb(0, 0, 0);
@@ -114,7 +112,10 @@ img {
   outline: none;
   transition: background-color 0.5s ease;
 }
-
+.home {
+  flex: 1;
+  max-width: 100%;
+}
 .menuContent {
   flex: 1;
   background-color: rgb(255, 255, 255);
@@ -144,4 +145,7 @@ img {
 .menuIndicator {
   position: right;
   right: 0;
+}
+.character {
+  outline: 1px solid red;
 }

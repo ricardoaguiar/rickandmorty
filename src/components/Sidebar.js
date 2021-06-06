@@ -1,14 +1,15 @@
 import React, { useState, useRef } from 'react';
 import { useRickAndMortyCharacters } from '../hooks/Api.hooks';
 import { Link } from '@reach/router';
+import Character from '../components/Character';
 
-export const Sidebar = () => {
+const Sidebar = () => {
   const [menu, setMenu] = useState(false);
   const [menuHeight, setMenuHeight] = useState('0px');
   const { characters } = useRickAndMortyCharacters();
-
   const content = useRef(null);
 
+  console.log('characters', characters);
   const toggleMenu = () => {
     setMenu(menu === '' ? 'active' : '');
     setMenuHeight(
@@ -17,23 +18,26 @@ export const Sidebar = () => {
   };
 
   return (
-    <div className="sidebar">
-      <button className={`menu `} onClick={toggleMenu}>
-        Select Your Favorite Character
-      </button>
-      <div
-        ref={content}
-        style={{ maxHeight: `${menuHeight}` }}
-        className="menuContent"
-      >
-        {characters.map((character) => (
-          <Link to={`/character/${character.id}`}>
-            <div className="menuItem" key={character.name}>
-              {character.name}
-            </div>
-          </Link>
-        ))}
+    <>
+      <div className="sidebar">
+        <button className={`menu ${setMenu}`} onClick={toggleMenu}>
+          Select Your Favorite Character
+        </button>
+        <div
+          ref={content}
+          style={{ maxHeight: `${menuHeight}` }}
+          className="menuContent"
+        >
+          {characters.map((character) => (
+            <Link to={`/character/${character.id}`} key={character.id}>
+              <div className="menuItem">{character.name}</div>
+            </Link>
+          ))}
+        </div>
       </div>
-    </div>
+      {/* <Character character={characters} /> */}
+    </>
   );
 };
+
+export default Sidebar;
