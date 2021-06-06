@@ -1,8 +1,14 @@
 import React from 'react';
 import { useRickAndMortyCharacters } from '../hooks/Api.hooks';
 import Character from '../components/Character';
-export const CharacterProfile = (props) => {
+// import { useParams } from 'react-router-dom';
+
+const CharacterProfile = (props) => {
   const { characters } = useRickAndMortyCharacters();
+  // const { id } = useParams();
+
+  // const findCharacter = characters.find((character => character.id === id) => { console.log(findCharacter)});
+
   return (
     <div className="character">
       {characters.map((character) => {
@@ -21,3 +27,5 @@ export const CharacterProfile = (props) => {
     </div>
   );
 };
+
+export default CharacterProfile;

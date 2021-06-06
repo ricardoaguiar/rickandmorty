@@ -1,6 +1,6 @@
 import React from 'react';
 import Sidebar from './components/Sidebar';
-import Character from './components/Character';
+import CharacterProfile from './pages/CharacterProfile';
 import { Home } from './pages/Home';
 import { Router, Link } from '@reach/router';
 
@@ -16,7 +16,7 @@ const App = () => {
         <Sidebar />
         <Home path="/" />
         <Router>
-          <Character path="/character/:id" />
+          <CharacterProfile path="/character/:id" />
         </Router>
       </div>
     </div>

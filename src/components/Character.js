@@ -1,17 +1,16 @@
 import React from 'react';
 
-const Character = ({ characters }) => {
-  // const { id, name, gender, species, status } = characters;
-  console.log('props', characters);
+const Character = (props) => {
+  const { id, name, gender, species, status } = props;
+  console.log('character props', props);
   return (
     <div className="character">
-      character goes here
-      {/* <div id={id}>
+      <div id={id}>
         <h1>{name}</h1>
         <p>{gender}</p>
         <p>{species}</p>
-        <p>{status}</p> */}
-      {/* </div> */}
+        <p>{status}</p>
+      </div>
     </div>
   );
 };

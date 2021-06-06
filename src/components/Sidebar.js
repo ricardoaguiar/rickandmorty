@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useRickAndMortyCharacters } from '../hooks/Api.hooks';
 import { Link } from '@reach/router';
-import Character from '../components/Character';
 
 const Sidebar = () => {
   const [menu, setMenu] = useState(false);
@@ -35,7 +34,6 @@ const Sidebar = () => {
           ))}
         </div>
       </div>
-      {/* <Character character={characters} /> */}
     </>
   );
 };
