@@ -2,7 +2,6 @@ import React from 'react';
 
 const Character = (props) => {
   const { id, name, gender, species, status } = props;
-  console.log('character props', props);
   return (
     <div className="character">
       <div id={id}>

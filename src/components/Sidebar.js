@@ -8,7 +8,6 @@ const Sidebar = () => {
   const { characters } = useRickAndMortyCharacters();
   const content = useRef(null);
 
-  console.log('characters', characters);
   const toggleMenu = () => {
     setMenu(menu === '' ? 'active' : '');
     setMenuHeight(
