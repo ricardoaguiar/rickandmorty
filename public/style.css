@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -10,9 +12,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.app {
+  display: flex;
+  flex-direction: column;
+}
 header {
-  display: block;
-  text-align: center;
+  display: inline-flex;
+  height: 5rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  color: rgba(255, 255, 255, 0.95);
 }
 ul {
   display: flex;
@@ -40,7 +50,7 @@ figcaption {
 }
 .container {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   justify-content: space-between;
 }
 .characterCard {
@@ -56,8 +66,82 @@ img {
   height: auto;
 }
 
-.characterSelector {
-  display: block;
+.sidebar {
+  flex: 1 0 220px;
+}
+
+.dropdown {
+  border: 1px solid grey;
+  border-radius: 5px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: min-content;
+}
+
+.dropdown-close {
+  max-height: 0;
+}
+
+.characterProfile {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.characterProfile span {
+  border: 1px solid grey;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.characterProfile span img {
+  object-fit: cover;
   width: 100%;
-  text-align: center;
+  height: auto;
+}
+.characterDetails {
+  flex-direction: column;
+}
+
+.menu {
+  background-color: #eee;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  outline: none;
+  transition: background-color 0.5s ease;
+}
+
+.menuContent {
+  flex: 1;
+  background-color: rgb(255, 255, 255);
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: max-height 0.5s ease;
+  padding-left: 1rem;
+  font-size: 0.8rem;
+  line-height: 2.2;
+}
+.menuItem {
+  flex: 1;
+}
+.menuItem:hover {
+  background-color: #111;
+  color: #fff;
+  margin-left: -1rem;
+  padding-left: 1rem;
+  cursor: pointer;
+}
+.menuItem:hover::before {
+  content: '▹ ';
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.menuIndicator {
+  position: right;
+  right: 0;
 }
